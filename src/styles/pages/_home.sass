@@ -1,0 +1,580 @@
+//  H E A D E R  /  N A V 
+/* ==================================================== */ 
+
+header
+    width: 100%
+    height: 60px
+    position: fixed
+    top: 0
+    z-index: 49
+    background-color: steelblue
+
+.nav
+    position: fixed
+    top: 0
+    z-index: 100
+    width: 100%
+    height: 60px
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    font-family: "Krona One"
+    padding: 0 4rem
+    color: whitesmoke
+
+    &__logo
+        width: auto
+        cursor: pointer
+    &__menu
+        padding-top: 4px
+        position: relative
+        &__theme
+            height: 35px
+            width: 35px
+            display: inline-block
+            position: absolute
+            top: 50%
+            right: -3rem
+            transform: translate(0, -50%)
+            cursor: pointer
+            border-radius: 50px
+            background-image: var(--theme-icon)
+            background-size: 60%
+            background-position: 50% 50%
+            background-repeat: no-repeat
+            transition: background-color 0.2s
+            &:hover
+                background-color: #205f92
+
+.nav__menu__button
+    padding: 10px 20px
+    border-radius: 50px
+    border: 1px solid
+    transition: all 0.25s
+    &:hover,
+    &:focus
+        color: steelblue
+        .nav__menu__button, .icon
+            filter: invert(45%) sepia(41%) saturate(604%) hue-rotate(165deg) brightness(97%) contrast(92%)
+
+    &.nav-large
+        display: inline-block
+
+    &.nav-small
+        display: none
+        padding: 10px 10px
+
+.icon
+    width: 20px
+    height: auto
+    cursor: pointer
+    margin-bottom: -2px
+    transition: all 0.25s
+    &:hover
+        filter: invert(45%) sepia(41%) saturate(604%) hue-rotate(165deg) brightness(97%) contrast(92%)
+
+.fill-animation
+    display: inline-block
+    position: relative
+    overflow: hidden
+
+    &::after
+        content: ''
+        position: absolute
+        z-index: -1
+        width: 100%
+        height: 0
+        bottom: 0
+        left: 0
+        background-color: whitesmoke
+        transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1)
+
+    &:hover::after
+        height: 100%
+
+// Media
+@media (max-width: 768px)
+    .nav
+        padding: 0 4rem 0 1rem
+    .nav__menu__button
+        &.nav-large
+            display: none
+        &.nav-small
+            display: inline-block
+
+//  M A I N  
+/* ==================================================== */
+
+main
+    position: relative
+    z-index: 5
+    background-color: whitesmoke
+
+/* Media */
+@media (max-width: 750px)
+    h3
+        font-size: 1.2rem
+
+//  H E R O  
+/* ==================================================== */
+
+#load__title
+    font-family: "Krona One"
+    font-size: 1rem
+    letter-spacing: 2px
+    text-transform: uppercase
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-right: -50%
+    transform: translate(-50%, -50%)
+    z-index: 10
+    opacity: 0
+    color: whitesmoke
+
+.hero
+    position: sticky
+    top: 0
+    width: 100%
+    height: 100vh
+    background-color: steelblue
+    color: whitesmoke
+    z-index: -1
+    pointer-events: none
+
+    &__title
+        width: fit-content
+        font-size: 7rem
+        line-height: 7rem
+        position: relative
+        top: 25%
+        font-kerning: none
+
+    &__subtext
+        width: fit-content
+        font-size: 1.5rem
+        line-height: 3rem
+        font-weight: 500
+        position: relative
+        left: 45%
+        top: 30%
+
+.small
+    display: none
+
+// Media
+@media (max-width: 1024px)
+    .hero
+        &__title
+            font-size: 6rem
+            line-height: 6rem
+        &__subtext
+            top: 35%
+            left: 30%
+
+@media (max-width: 768px)
+    .hero
+        &__title
+            font-size: 5rem
+            line-height: 5rem
+            margin: auto
+            text-align: center
+        &__subtext
+            margin: auto
+            left: 0
+            right: 0
+            text-align: center
+
+@media (max-width: 600px)
+    .hero
+        &__title
+            font-size: 4rem
+            line-height: 4.5rem
+        &__subtext
+            font-size: 1.3rem
+            line-height: 2.5rem
+
+@media (max-width: 475px)
+    .hero
+        &__title
+            font-size: 3rem
+            line-height: 4rem
+        &__subtext
+            display: none
+
+    .small
+        display: block
+
+//  A B O U T  
+/* ==================================================== */
+
+.about
+    position: relative
+    color: var(--theme-text)
+    background-color: var(--theme-background)
+    border-radius: 32px 32px 0 0
+
+.about__contentwrapper
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: 2rem
+    padding-bottom: 60px
+
+.about__textwrapper
+    max-width: 500px
+    padding-top: 30%
+    display: flex
+    flex-direction: column
+    width: 100%
+
+    &__title
+        margin-bottom: 2rem
+        font-family: "Krona One"
+
+    &__text
+        font-size: 1rem
+
+.about__imagewrapper
+    width: 100%
+    padding-left: 20%
+
+    &__inner
+        height: 65vh
+        width: 100%
+        overflow: hidden
+        border-radius: 8px
+        border: 2px solid steelblue
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px
+
+        &__image
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+// Media
+@media (max-width: 1024px)
+    .about__imagewrapper
+        padding-left: 0
+
+@media (max-width: 850px)
+    .about__contentwrapper
+        height: auto
+        grid-template-columns: repeat(1, 1fr)
+
+    .about__textwrapper
+        order: 2
+        width: 100%
+        max-width: none
+        padding-top: 15%
+
+    .about__imagewrapper
+        order: 1
+        margin: auto
+        max-width: 450px
+
+//  S K I L L S  
+/* ==================================================== */
+
+.skills
+    background-color: var(--theme-background)
+    color: var(--theme-text)
+    padding-top: 150px
+    padding-bottom: 100px
+    position: relative
+
+    &__title
+        margin-bottom: 4rem
+
+    &__grid
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 2rem
+
+.skills__grid__skill
+    height: 165px
+    min-width: 165px
+    padding: 2rem
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    outline: 0.5px solid var(--theme-text)
+    border-radius: 8px
+
+    &__icon
+        width: 50px
+        height: 50px
+        margin-bottom: 1rem
+
+    &__text
+        text-align: center
+        text-transform: uppercase
+        font-size: 0.8rem
+        font-weight: 600
+        letter-spacing: 2px
+
+// Media
+@media (max-width: 885px)
+    .skills
+        padding-bottom: 20px
+        &__grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 1rem
+
+    .skills__grid__skill
+        flex-direction: row
+        height: fit-content
+        min-width: none
+        padding: 1rem 2rem
+
+        &__icon
+            width: 40px
+            height: 40px
+            margin-bottom: 0
+
+@media (max-width: 600px)
+    .skills
+
+        &__grid
+            grid-template-columns: repeat(1, 1fr)
+
+    .skills__grid__skill
+        padding: 0.5rem 2rem
+
+        &__icon
+            width: 30px
+            height: 30px
+
+//  W O R K  
+/* ==================================================== */
+
+.work
+    background-color: var(--theme-background)
+    color: var(--theme-text)
+    position: relative
+    padding-bottom: 200px
+
+    &__title
+        color: var(--theme-text)
+        font-size: 4.5rem
+        font-family: "Krona One"
+        padding: 200px 150px
+
+.work__project
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    gap: 4rem
+    align-items: flex-start
+    margin-bottom: 200px
+
+    &:last-of-type
+        margin-bottom: 0
+
+.work__project__textwrapper
+    width: 35%
+    display: flex
+    flex-direction: column
+
+    &__title
+        margin-bottom: 2rem
+        font-size: 2.5rem
+        cursor: pointer
+        transition: all 0.2s
+        &:hover
+            color: steelblue
+
+    &__text
+        font-size: 1.2rem
+        line-height: 1.6
+        font-weight: 500
+
+.work__project__imagewrapper
+    width: 60%
+    height: 100vh
+    border: 2px solid steelblue
+    position: relative
+    border-radius: 8px
+    overflow: hidden
+
+    img
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        right: 0
+        margin: auto
+        top: -100%
+        object-fit: cover
+        object-position: center
+
+// Media
+@media (max-width: 1023px)
+    .work__project
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        gap: 4rem
+        align-items: flex-start
+        margin-bottom: 200px
+
+    .work__project__textwrapper
+        order: 2
+        width: 50%
+        min-width: 450px
+        margin: auto
+
+    .work__project__imagewrapper
+        order: 1
+        width: 100%
+        height: 70vh
+        position: relative
+
+        img
+            // position: static
+            // margin: auto
+            // top: 0
+
+@media (max-width: 768px)
+    .work__project
+        gap: 2.5rem
+    .work__project__textwrapper
+        width: 100%
+        min-width: 0
+        margin: 0
+
+@media (max-width: 450px)
+    .work__project
+        margin-bottom: 120px
+
+//  V I D E O 
+/* ==================================================== */
+
+.video-container
+    height: calc(100vh - 60px)
+    padding: 0
+    position: relative
+    z-index: 5
+
+    &__slider
+        width: 25%
+        height: 100%
+        background-color: steelblue
+        position: absolute
+        top: 0
+        z-index: 10
+
+        &.left
+            left: 0
+
+        &.right
+            right: 0
+
+    &__video
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+// Media
+@media (max-width: 1023px)
+    .video-container
+        height: 80vh
+
+@media (max-width: 768px)
+    .video-container
+        height: 60vh
+
+@media (max-width: 600px)
+    .video-container
+        height: 45vh
+
+//  F O O T E R 
+/* ==================================================== */
+
+.footer__outer
+    width: 100%
+    height: 30vh
+    position: relative
+    // z-index: 0
+
+.footer__inner
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: 0 4rem
+    position: relative
+    background-color: #2b2b2b
+
+    &__title
+        color: whitesmoke
+        cursor: pointer
+        transition: color 0.2s
+        &:hover
+            color: steelblue
+        &:active
+            color: whitesmoke
+
+    &__textwrapper
+        width: calc( 100% - 128px )
+        height: 40px
+        position: absolute
+        bottom: 0
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        border-top: 0.5px solid whitesmoke
+        font-size: 0.8rem
+        color: whitesmoke
+
+@media (max-width: 1280px)
+    .footer__inner
+        padding: 0 4rem
+
+@media (max-width: 768px)
+    .footer__inner
+        padding: 0 1rem
+
+    .footer__inner__textwrapper
+        width: calc( 100% - 2rem )
+
+//  S E C T I O N   T I T L E
+/* ==================================================== */
+
+.section__title-wrapper
+    display: grid
+    width: fit-content
+    padding: 150px 150px 100px
+    position: relative
+    font-size: 4.5rem
+    font-family: "Krona One"
+
+    .one
+        grid-area: 1 / 1 / 2 / 2
+        opacity: 1
+        color: var(--theme-text)
+        transform-origin: bottom left
+        transition: all 0.4s ease-out
+        &.active
+            transform: translateY(-70%) rotate(-5deg)
+            opacity: 0
+
+    .two
+        grid-area: 1 / 1 / 2 / 2
+        opacity: 0
+        color: steelblue
+        transform: translateY(70%) rotate(5deg)
+        transform-origin: top left
+        transition: all 0.4s ease-out
+        &.active
+            transform: translate(0) rotate(0deg)
+            opacity: 1
+
+@media (max-width: 768px)
+    .section__title-wrapper
+        margin: auto
+        font-size: 3.8rem
+        padding: 150px 0 100px

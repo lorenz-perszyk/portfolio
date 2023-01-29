@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portfolio</title>
+		<script type="module" src="/src/typescript/main.ts" defer></script>
+		<link rel="icon" type="image/x-icon" href="/lp_favicon.svg" />
+		<script
+			type="module"
+			src="/src/typescript/helpers/locomotive-scroll.ts"
+			defer
+		></script>
+		<script type="module" src="/src/typescript/helpers/gsap.ts" defer></script>
+		<script type="module" src="/src/typescript/helpers/barba.ts" defer></script>
+	</head>
+
+	<body>
+		<div class="load-container">
+			<div class="loading-screen"></div>
+		</div>
+		<header>
+			<nav class="nav" id="nav" data-cursor="-color-whitesmoke">
+				<div class="nav__logo">
+					<a href="/index.html">Lorenz Perszyk</a>
+				</div>
+				<div class="nav__menu" data-cursor="-hidden">
+					<div class="nav__menu__theme" id="theme-toggle"></div>
+					<a href="/src/pages/contact.html">
+						<div class="nav__menu__button fill-animation nav-large">
+							Contact
+						</div>
+					</a>
+					<a href="/src/pages/contact.html">
+						<div class="nav__menu__button fill-animation nav-small">
+							<object
+								class="icon"
+								data="/src/assets/icons/email.svg"
+								type="image/svg+xml"
+							></object>
+						</div>
+					</a>
+				</div>
+			</nav>
+		</header>
+
+		<div data-barba="wrapper">
+			<div data-scroll-container id="scroll-container">
+				<div data-barba="container" data-barba-namespace="contact">
+					<main data-cursor="-color-steelblue">
+						<section class="contact">
+							<h1 class="contact__title">LET'S TALK!</h1>
+							<div class="contact__wrapper">
+								<!-- F O R M -->
+								<form
+									class="contact__wrapper__form"
+									onsubmit="event.preventDefault()"
+									method="POST"
+									action="https://formsubmit.co/wiyamon989@ukbob.com"
+								>
+									<div class="input__wrapper">
+										<input
+											class="input__wrapper__inputfield outline"
+											type="text"
+											id="name"
+											name="name"
+											required
+										/>
+										<span>Your name</span>
+									</div>
+
+									<div class="input__wrapper">
+										<input
+											class="input__wrapper__inputfield outline"
+											type="email"
+											id="email"
+											name="email"
+											required
+										/>
+										<span>Your email</span>
+									</div>
+
+									<div class="input__wrapper textarea">
+										<textarea
+											class="input__wrapper__inputfield"
+											name="text"
+											required
+										></textarea>
+										<span>Your message</span>
+									</div>
+									<input type="hidden" name="_captcha" value="false" />
+									<input type="text" name="_honey" style="display: none" />
+									<input
+										class="input__wrapper button"
+										id="send-button"
+										type="submit"
+										value="Send message"
+									/>
+								</form>
+								<div class="contact__wrapper__form__success">
+									<img
+										class="contact__wrapper__form__success__plane"
+										src="/src/assets/icons/letter.svg"
+										alt="paper plane"
+									/>
+									<p class="contact__wrapper__form__success__text">
+										Thank you!<br />
+										We will be in contact soon.
+									</p>
+								</div>
+
+								<div class="contact__wrapper__info">
+									<h3>You can also reach me under:</h3>
+									<div>
+										<div class="contact__wrapper__info__data">
+											<i class="fa-solid fa-phone"></i>
+											<p>+43 (0)664 / 88925667</p>
+										</div>
+										<div class="contact__wrapper__info__data">
+											<i class="fa-solid fa-envelope"></i>
+											<p>lorenz.perszyk@gmail.com</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</main>
+					<footer class="footer__small" data-cursor="-color-steelblue">
+						<div class="footer__small__inner">
+							<p>Lorenz Perszyk</p>
+							<p>2023</p>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

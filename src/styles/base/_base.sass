@@ -1,0 +1,142 @@
+// Document
+:root
+	font-family: "Poppins", Verdana, sans-serif
+	font-size: 16px
+	font-weight: 400
+	width: 100%
+
+	color: black
+
+	font-synthesis: none
+	text-rendering: optimizeLegibility
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	-webkit-text-size-adjust: 100%
+
+html
+	height: 100%
+	width: 100vw
+
+// creating a light and a dark theme on html level
+html[data-theme="light"]
+	--theme-text: black
+	--theme-background: whitesmoke
+	--theme-icon: url(/src/assets/icons/moon.svg)
+
+html[data-theme="dark"]
+	--theme-text: whitesmoke
+	--theme-background: #2b2b2b
+	--theme-icon: url(/src/assets/icons/sun.svg)
+
+body
+	height: 100%
+	margin: 0
+	padding: 0
+
+	text-align: left
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+*
+	box-sizing: border-box
+	// outline: 0.5px solid black
+	transition: color 0.25s, background-color 0.25s
+
+	&:before,
+	&:after
+		box-sizing: border-box
+
+main
+	color: var(--theme-text)
+
+section
+	padding: 0 15%
+	z-index: 5
+
+@media (max-width: 1280px)
+	section
+		padding: 0 4rem
+
+@media (max-width: 768px)
+	section
+		padding: 0 1rem
+
+@media (max-width: 640px)
+	section
+		padding: 0 0.5rem
+
+	// Links
+a
+	color: inherit
+	cursor: pointer
+	text-decoration: none
+
+	&:hover,
+	&:focus
+		text-decoration: none
+
+a,
+button,
+label,
+input
+	-webkit-tap-highlight-color: transparent
+
+// Media
+img,
+svg,
+canvas,
+audio,
+video,
+iframe
+	vertical-align: middle
+
+figure
+	margin: 0
+
+// Inputs
+input,
+button,
+select,
+textarea
+	font-family: inherit
+	font-size: inherit
+	line-height: inherit
+
+// Buttons
+button,
+[type="button"],
+[type="reset"],
+[type="submit"]
+	&:not(:disabled)
+		cursor: pointer
+
+// Text
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote
+	margin: 0
+	padding: 0
+
+em
+	font-style: normal
+
+h1, h2
+	font-family: "Krona One"
+
+h2
+	font-size: 2rem
+	letter-spacing: 1px
+	text-transform: uppercase
+
+// Fix for Smooth scrolling on Chrome 
+.has-scroll-smooth
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0

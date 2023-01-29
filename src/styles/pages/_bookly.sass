@@ -1,0 +1,372 @@
+
+//  H E R O
+/* ==================================================== */
+
+main
+    background-color: var(--theme-background)
+    color: var(--theme-text)
+    height: fit-content
+
+.project-hero
+    padding-top: 120px
+
+.project-hero__wrapper
+    width: 100%
+    height: 65vh
+    position: relative
+    background-color: whitesmoke
+    border: 2px solid black
+    border-radius: 8px
+    overflow: hidden
+
+    &__rings
+        width: 700px
+        height: auto
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+    &__circle
+        width: auto
+        height: 400px
+        position: absolute
+        z-index: 5
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+    &__arrow
+        width: 90px
+        height: 90px
+        padding: 15px
+        position: absolute
+        z-index: 10
+        bottom: 20px
+        right: 20px
+        opacity: 0.7
+        transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1)
+        cursor: pointer
+        &:hover
+            opacity: 1
+            scale: 1.2
+            transform: rotate(45deg)
+        &:active
+            scale: 1
+            transition: 0.05s
+
+// Media
+@media (max-width: 750px)
+    .project-hero__wrapper
+        &__rings
+            width: 600px
+        &__circle
+            width: 330px
+        &__arrow
+            width: 75px
+            height: 75px
+            bottom: 0
+            right: 0
+
+@media (max-width: 520px)
+    .project-hero__wrapper
+        &__rings
+            width: 500px
+        &__circle
+            width: 280px
+
+@media (max-width: 420px)
+    .project-hero__wrapper
+        &__rings
+            // width: 440px
+        &__circle
+            // width: 250px
+
+//  G R I D
+/* ==================================================== */
+.project-grid
+    display: grid
+    grid-template-columns: repeat(8, minmax(0, 1fr))
+    row-gap: 200px
+    column-gap: 2rem
+    margin-top: 40px
+
+.description
+    grid-column: 1/9
+    display: flex
+    flex-direction: column
+    height: fit-content
+
+    &__tech
+        display: flex
+        flex-direction: row
+        align-items: center
+        gap: 2rem
+        margin-bottom: 4rem
+
+        &__titel
+            text-transform: uppercase
+            font-size: 0.8rem
+            letter-spacing: 1px
+            font-weight: 500
+
+        &__icons
+            display: flex
+            flex-direction: row
+            gap: 2rem
+
+            &__icon
+                width: 35px
+                height: auto
+
+    &__text
+        &__headline
+            font-size: 2.5rem
+            border-bottom: 0.5px solid var(--theme-text)
+        &__body
+            font-size: 1.3rem
+            line-height: 1.8
+            padding-top: 2rem
+            max-width: 750px
+
+.grid__image-container
+    outline: 2px solid black
+    border-radius: 8px
+    overflow: hidden
+    height: fit-content
+
+    &.one
+        grid-column: 2/8
+    &__image.one
+        width: 100%
+        height: 100%
+        object-fit: contain
+
+    &.two
+        grid-column: 2/8
+    &__image.two
+        width: 100%
+        height: 100%
+        object-fit: contain
+
+    &.three
+        grid-column: 5/7
+    &__image.three
+        width: 100%
+        height: 100%
+        object-fit: contain
+
+    &.four
+        grid-column: 7/9
+    &__image.four
+        width: 100%
+        height: 100%
+        object-fit: contain
+
+.description__secondary
+    font-size: 1.3rem
+    line-height: 1.8
+    &.one
+        grid-column: 3/7
+    &.two
+        grid-column: 1/4
+
+// Media
+@media (max-width: 1400px)
+    .grid__image-container
+        &.one
+            grid-column: 1/9
+        &.two
+            grid-column: 1/9
+    .description__secondary
+        &.one
+            grid-column: 2/8
+
+@media (max-width: 1280px)
+    .project-grid
+        row-gap: 140px
+    .grid__image-container
+        &.one
+            grid-column: 2/8
+        &.two
+            grid-column: 2/8
+
+@media (max-width: 1080px)
+    .project-grid
+        row-gap: 140px
+    .grid__image-container
+        &.one
+            grid-column: 1/9
+        &.two
+            grid-column: 1/9
+    .description__secondary
+        &.two
+            grid-column: 1/4
+    .description__secondary
+        font-size: 1.2rem
+
+@media (max-width: 980px)
+    .grid__image-container
+        &.three
+            grid-column: 2/5
+        &.four
+            grid-column: 5/8
+    .description__secondary
+        &.one
+            grid-column: 2/8
+        &.two
+            grid-column: 2/8
+    .description
+        &__text
+            &__headline
+                font-size: 2.1rem
+
+@media (max-width: 750px)
+    .project-grid
+        row-gap: 120px
+    .description
+        &__text
+            &__headline
+                font-size: 1.9rem
+            &__body
+                font-size: 1.2rem
+                line-height: 1.6
+
+@media (max-width: 600px)
+    .project-grid
+        row-gap: 100px
+    .description__secondary
+        font-size: 1.1rem
+        &.one
+            grid-column: 1/9
+    .description
+        &__text
+            &__body
+                font-size: 1.1rem
+                line-height: 1.6
+                padding-top: 1.5rem
+
+@media (max-width: 500px)
+    .grid__image-container
+        &.three
+            grid-column: 1/5
+        &.four
+            grid-column: 5/9
+    .description__secondary
+        &.two
+            grid-column: 1/9
+
+@media (max-width: 400px)
+    .grid__image-container
+        &.three
+            grid-column: 2/8
+        &.four
+            grid-column: 2/8
+
+    .description
+        &__tech
+            &__icons
+                gap: 1.5rem
+                &__icon
+                    width: 28px
+
+// N E X T  P R O J E C T
+/* ==================================================== */
+.next
+    height: fit-content
+    display: flex
+    flex-direction: column
+    gap: 50px
+    padding: 120px 0 80px
+    text-align: center
+
+    &__project
+        display: flex
+        height: 80px
+        align-items: center
+        justify-content: center
+        &__name
+            font-size: 3rem
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1)
+            cursor: pointer
+            &:active
+                color: steelblue
+                transition: color 0.1s
+            &:hover
+                letter-spacing: 5px
+                font-size: 3.2rem
+
+    &__menu
+        display: flex
+        flex-direction: column
+        gap: 2rem
+        justify-content: space-between
+        font-size: 1.1rem
+        text-transform: uppercase
+        letter-spacing: 1px
+        font-family: "Krona One"
+
+.underline-animation-next
+    display: inline-block
+    position: relative
+
+    &:after
+        content: ''
+        position: absolute
+        width: 100%
+        transform: scaleX(0)
+        height: 2px
+        bottom: -4px
+        left: 0
+        background-color: currentcolor
+        transform-origin: bottom right
+        transition: transform 0.25s ease-out
+
+    &:hover:after
+        transform: scaleX(1)
+        transform-origin: bottom left
+
+@media (max-width: 1280px)
+    .next
+        &__project
+            &__name
+                font-size: 2.4rem
+                &:hover
+                    letter-spacing: 3px
+                    font-size: 2.7rem
+
+@media (max-width: 600px)
+    .next
+        &__project
+            &__name
+                font-size: 1.9rem
+                &:hover
+                    letter-spacing: 1px
+                    font-size: 2rem
+
+// F O O T E R
+/* ==================================================== */
+.footer__small
+    width: 100%
+    height: 40px
+    &__inner
+        height: 100%
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        padding: 0 4rem
+        position: relative
+        font-size: 0.8rem
+        color: whitesmoke
+        background-color: #2b2b2b
+
+// Media
+@media (max-width: 768px)
+    .footer__small
+        &__inner
+            padding: 0 1rem
+@media (max-width: 640px)
+    .footer__small
+        &__inner
+            padding: 0 0.5rem

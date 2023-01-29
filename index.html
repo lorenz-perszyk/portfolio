@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portfolio</title>
+		<script type="module" src="/src/typescript/main.ts" defer></script>
+		<link rel="icon" type="image/x-icon" href="/lp_favicon.svg" />
+		<script
+			type="module"
+			src="/src/typescript/helpers/locomotive-scroll.ts"
+			defer
+		></script>
+		<script type="module" src="/src/typescript/helpers/gsap.ts" defer></script>
+		<script type="module" src="/src/typescript/helpers/barba.ts" defer></script>
+		<script>
+			/*to prevent Firefox FOUC, this must be here*/
+			let FF_FOUC_FIX;
+		</script>
+	</head>
+
+	<body>
+		<div class="load-container">
+			<div class="loading-screen"></div>
+		</div>
+
+		<header>
+			<nav class="nav" id="nav" data-cursor="-color-whitesmoke">
+				<div class="nav__logo">
+					<a href="/index.html">Lorenz Perszyk</a>
+				</div>
+				<div class="nav__menu" data-cursor="-hidden">
+					<div class="nav__menu__theme" id="theme-toggle"></div>
+					<a href="/src/pages/contact.html">
+						<div class="nav__menu__button fill-animation nav-large">
+							Contact
+						</div>
+					</a>
+					<a href="/src/pages/contact.html">
+						<div class="nav__menu__button fill-animation nav-small">
+							<object
+								class="icon"
+								data="/src/assets/icons/email.svg"
+								type="image/svg+xml"
+							></object>
+						</div>
+					</a>
+				</div>
+			</nav>
+		</header>
+
+		<div data-barba="wrapper">
+			<div data-scroll-container id="scroll-container">
+				<div data-barba="container" data-barba-namespace="home">
+					<main>
+						<section
+							class="hero"
+							data-cursor="-color-whitesmoke"
+							data-scroll
+							data-scroll-sticky
+							data-scroll-target="#scroll-container"
+						>
+							<div id="load__title">Lorenz Perszyk</div>
+							<h1 class="hero__title">DESIGN<br />DEVELOPE<br />ANIMATE</h1>
+							<p class="hero__subtext">
+								Creative front-end development, <br />
+								with a passion for smooth 2D animations <br />
+								and challenging layouts.
+							</p>
+							<p class="hero__subtext small">
+								Creative front-end development, with a passion for smooth 2D
+								animations and challenging layouts.
+							</p>
+						</section>
+
+						<section class="about" data-cursor="-color-steelblue">
+							<div class="section__title-wrapper">
+								<div class="one">HELLO</div>
+								<div class="two">HELLO</div>
+							</div>
+							<div class="about__contentwrapper">
+								<div class="about__textwrapper">
+									<h2 class="about__textwrapper__title">This is me!</h2>
+									<p class="about__textwrapper__text">
+										I’m a designer with a BA in communication design and 6+
+										years of working experience who enjoys creating engaging
+										user experiences. With my passion for interaction animations
+										I develope modern web solutions that look great on all
+										devices. Having worked with a large variety of tools, I’m
+										able to choose the best ones for the job.
+										<br /><br />
+										I’m detail-oriented and love to use my abilities in finding
+										solutions to any problems coming my way. By being able to
+										combine my experience in the field of design with
+										technological know-how, I’m able to create complete
+										solutions, start to finish.
+										<br /><br />
+										When I’m not busy with creating some cool web animations or
+										solving a coding challenge, I can often be found reading,
+										visiting an art house cinema or cruising along the
+										Donauinsel on my road bike.
+									</p>
+								</div>
+								<div class="about__imagewrapper">
+									<div class="about__imagewrapper__inner">
+										<img
+											class="about__imagewrapper__inner__image"
+											src="/src/assets/media/lorenz.webp"
+											alt="Portrait of Lorenz Perszyk"
+										/>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<section class="skills" data-cursor="-color-steelblue">
+							<h2 class="skills__title">Skills</h2>
+							<div class="skills__grid">
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/html.svg"
+										alt="HTML icon"
+									/>
+									<p class="skills__grid__skill__text">HTML</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/css.svg"
+										alt="CSS icon"
+									/>
+									<p class="skills__grid__skill__text">CSS</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/sass.svg"
+										alt="Sass icon"
+									/>
+									<p class="skills__grid__skill__text">Sass</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/tailwind.svg"
+										alt="Tailwind icon"
+									/>
+									<p class="skills__grid__skill__text">Tailwind</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/react.svg"
+										alt="React icon"
+									/>
+									<p class="skills__grid__skill__text">React</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/javascript.svg"
+										alt="JavaScript icon"
+									/>
+									<p class="skills__grid__skill__text">JavaScript</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/typescript.svg"
+										alt="TypeScript icon"
+									/>
+									<p class="skills__grid__skill__text">TypeScript</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/git.svg"
+										alt="Git icon"
+									/>
+									<p class="skills__grid__skill__text">Git</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/github.svg"
+										alt="GitHub icon"
+									/>
+									<p class="skills__grid__skill__text">GitHub</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/vite.svg"
+										alt="Vite icon"
+									/>
+									<p class="skills__grid__skill__text">Vite</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/vsc.svg"
+										alt="VSC icon"
+									/>
+									<p class="skills__grid__skill__text">VSC</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/aftereffects.svg"
+										alt="After Effects icon"
+									/>
+									<p class="skills__grid__skill__text">After Effects</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/photoshop.svg"
+										alt="Photoshop icon"
+									/>
+									<p class="skills__grid__skill__text">Photoshop</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/illustrator.svg"
+										alt="Illustrator icon"
+									/>
+									<p class="skills__grid__skill__text">Illustrator</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/indesign.svg"
+										alt="Indesign icon"
+									/>
+									<p class="skills__grid__skill__text">InDesign</p>
+								</div>
+								<div class="skills__grid__skill">
+									<img
+										class="skills__grid__skill__icon"
+										src="/src/assets/icons/figma.svg"
+										alt="Figma icon"
+									/>
+									<p class="skills__grid__skill__text">Figma</p>
+								</div>
+							</div>
+						</section>
+
+						<section class="work" data-cursor="-color-steelblue">
+							<div class="section__title-wrapper">
+								<div class="one">WORK</div>
+								<div class="two">WORK</div>
+							</div>
+							<div class="work__project" id="bookly">
+								<div
+									class="work__project__textwrapper"
+									data-scroll
+									data-scroll-sticky
+									data-scroll-offset="-120, 120"
+									data-scroll-target="#bookly"
+								>
+									<h2 class="work__project__textwrapper__title">
+										<a href="/src/pages/bookly.html">Bookly</a>
+									</h2>
+									<p class="work__project__textwrapper__text">
+										Looking for something new to read? Try out “Bookly”, a user
+										friendly desktop app, that will help you find that next
+										great read.
+									</p>
+								</div>
+								<div
+									class="work__project__imagewrapper"
+									id="fixed-target-bookly"
+								>
+									<a href="/src/pages/bookly.html">
+										<img
+											data-cursor-text="Explore"
+											data-cursor="-text"
+											data-scroll
+											data-scroll-target="#fixed-target-bookly"
+											class="work__project__imagewrapper__image"
+											id="bookly-image"
+											src="/src/assets/media/bookly/bookly_1.webp"
+											alt="Bookly App"
+										/>
+									</a>
+								</div>
+							</div>
+							<div class="work__project" id="grolly">
+								<div
+									class="work__project__textwrapper"
+									data-scroll
+									data-scroll-sticky
+									data-scroll-offset="-120, 120"
+									data-scroll-target="#grolly"
+								>
+									<h2 class="work__project__textwrapper__title">
+										<a href="/src/pages/grolly.html">Grolly</a>
+									</h2>
+									<p class="work__project__textwrapper__text">
+										Wine producer Grolly was looking for a new and fresh
+										rebranding of their winery. Salut!
+									</p>
+								</div>
+								<div
+									class="work__project__imagewrapper"
+									id="fixed-target-grolly"
+								>
+									<a href="/src/pages/grolly.html">
+										<img
+											data-cursor-text="Explore"
+											data-cursor="-text"
+											data-scroll
+											data-scroll-target="#fixed-target-grolly"
+											class="work__project__imagewrapper__image"
+											id="grolly-image"
+											src="/src/assets/media/grolly/hero.webp"
+											alt="Grolly Weine"
+										/>
+									</a>
+								</div>
+							</div>
+						</section>
+
+						<section class="video-container" data-cursor="-color-whitesmoke">
+							<div class="video-container__slider left"></div>
+							<div class="video-container__slider right"></div>
+							<video
+								class="video-container__video"
+								src="/src/assets/media/Portfolio_Reel 2023.mp4"
+								type="video/mp4"
+								loop="true"
+								playsinline="true"
+								webkit-playsinline="true"
+								preload="auto"
+								muted="muted"
+							></video>
+						</section>
+						<div class="footer__outer" data-cursor="-color-whitesmoke">
+							<div class="footer__inner">
+								<h2 class="footer__inner__title">
+									<a href="src/pages/contact.html">Let's get in touch!</a>
+								</h2>
+								<div class="footer__inner__textwrapper">
+									<p class="footer__inner__textwrapper__name">Lorenz Perszyk</p>
+									<p class="footer__inner__textwrapper__date">2023</p>
+								</div>
+							</div>
+						</div>
+					</main>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

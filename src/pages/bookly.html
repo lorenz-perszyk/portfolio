@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portfolio</title>
+		<script type="module" src="/src/typescript/main.ts" defer></script>
+		<link rel="icon" type="image/x-icon" href="/lp_favicon.svg" />
+		<script
+			type="module"
+			src="/src/typescript/helpers/locomotive-scroll.ts"
+			defer
+		></script>
+		<script type="module" src="/src/typescript/helpers/gsap.ts" defer></script>
+		<script type="module" src="/src/typescript/helpers/barba.ts" defer></script>
+		<script>
+			/*to prevent Firefox FOUC, this must be here*/
+			let FF_FOUC_FIX;
+		</script>
+	</head>
+
+	<body>
+		<div class="load-container">
+			<div class="loading-screen"></div>
+		</div>
+		<header>
+			<nav class="nav" id="nav" data-cursor="-color-whitesmoke">
+				<div class="nav__logo">
+					<a href="/index.html">Lorenz Perszyk</a>
+				</div>
+				<div class="nav__menu" data-cursor="-hidden">
+					<div class="nav__menu__theme" id="theme-toggle"></div>
+					<a href="/src/pages/contact.html">
+						<div class="nav__menu__button fill-animation nav-large">
+							Contact
+						</div>
+					</a>
+					<a href="/src/pages/contact.html">
+						<div class="nav__menu__button fill-animation nav-small">
+							<object
+								class="icon"
+								data="/src/assets/icons/email.svg"
+								type="image/svg+xml"
+							></object>
+						</div>
+					</a>
+				</div>
+			</nav>
+		</header>
+
+		<div data-barba="wrapper">
+			<div data-scroll-container id="scroll-container">
+				<div data-barba="container" data-barba-namespace="bookly">
+					<main>
+						<section class="project-hero">
+							<div class="project-hero__wrapper">
+								<lottie-player
+									src="https://lottie.host/ccd940aa-5f91-4bee-83c9-74a12367dd89/W5pFTtmJHF.json"
+									class="project-hero__wrapper__rings"
+									background="transparent"
+									speed="1"
+									loop
+									autoplay
+								></lottie-player>
+								<img
+									class="project-hero__wrapper__circle"
+									src="/src/assets/media/bookly/bookly_inner_circle.svg"
+									alt="Bookly Homepage"
+								/>
+								<a
+									href="https://lorenz-perszyk.github.io/bookly/"
+									target="_blank"
+									><img
+										class="project-hero__wrapper__arrow"
+										src="/src/assets/icons/explore_arrow.svg"
+										alt="arrow"
+								/></a>
+							</div>
+							<div class="project-grid">
+								<div class="description">
+									<div class="description__tech">
+										<p class="description__tech__titel">Tech-Stack</p>
+										<div class="description__tech__icons">
+											<img
+												class="description__tech__icons__icon"
+												src="/src/assets/icons/react.svg"
+												alt="React"
+											/>
+											<img
+												class="description__tech__icons__icon"
+												src="/src/assets/icons/typescript.svg"
+												alt="TS"
+											/>
+											<img
+												class="description__tech__icons__icon"
+												src="/src/assets/icons/vite.svg"
+												alt="Vite"
+											/>
+										</div>
+									</div>
+									<div class="description__text">
+										<h2 class="description__text__headline">Bookly App</h2>
+										<p class="description__text__body">
+											“If you don't like to read, you haven't found the right
+											book.” And what better way to do so, than by using Bookly?
+											The Bookly app, intended for desktop use, utilizes the
+											Google Books API to to search through millions of entries,
+											to find the right match for you. Besides the search term,
+											you have the option to filter the results by category,
+											page count and publication date. So what’s stopping you?
+											Give it a try!
+										</p>
+									</div>
+								</div>
+
+								<div class="grid__image-container one">
+									<img
+										class="grid__image-container__image one"
+										src="/src/assets/media/bookly/bookly_2.webp"
+										alt=""
+									/>
+								</div>
+								<div class="description__secondary one">
+									<p class="description__secondary__text one">
+										“I find television very educating. Every time somebody turns
+										on the set, I go into the other room and read a book.”
+										&nbsp;&nbsp; – Groucho Marx
+									</p>
+								</div>
+								<div class="grid__image-container two">
+									<img
+										class="grid__image-container__image two"
+										src="/src/assets/media/bookly/bookly_3.webp"
+										alt=""
+									/>
+								</div>
+								<div class="description__secondary two">
+									<p class="description__secondary__text two">
+										In the sidebar you can view the current search parameters,
+										and your saved books.
+									</p>
+								</div>
+								<div class="grid__image-container three">
+									<img
+										class="grid__image-container__image three"
+										src="/src/assets/media/bookly/bookly_search.webp"
+										alt=""
+									/>
+								</div>
+								<div class="grid__image-container four">
+									<img
+										class="grid__image-container__image four"
+										src="/src/assets/media/bookly/bookly_bookshelf.webp"
+										alt=""
+									/>
+								</div>
+							</div>
+						</section>
+						<section class="next">
+							<div class="next__project">
+								<a href="/src/pages/grolly.html"
+									><h2 class="next__project__name">Grolly Weine</h2></a
+								>
+							</div>
+							<div class="next__menu">
+								<a href="/index.html"
+									><h3 class="next__menu__item underline-animation-next">
+										Home
+									</h3></a
+								>
+								<a href="/src/pages/contact.html"
+									><h3 class="next__menu__item underline-animation-next">
+										Contact
+									</h3>
+								</a>
+							</div>
+						</section>
+					</main>
+					<footer class="footer__small" data-cursor="-color-steelblue">
+						<div class="footer__small__inner">
+							<p>Lorenz Perszyk</p>
+							<p>2023</p>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

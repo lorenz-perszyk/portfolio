@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/lorenz-perszyk/portfolio/main/.github/images/portfolio.png)
+![](https://raw.githubusercontent.com/lorenz-perszyk/portfolio/master/.github/images/portfolio.png)
 
 # Portfolio
 

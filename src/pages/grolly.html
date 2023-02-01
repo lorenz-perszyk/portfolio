@@ -6,7 +6,6 @@
 		<title>Portfolio</title>
 		<script type="module" src="/src/typescript/main.ts" defer></script>
 		<link rel="icon" type="image/x-icon" href="/lp_favicon.svg" />
-		/>
 		<script
 			type="module"
 			src="/src/typescript/helpers/locomotive-scroll.ts"
@@ -14,16 +13,13 @@
 		></script>
 		<script type="module" src="/src/typescript/helpers/gsap.ts" defer></script>
 		<script type="module" src="/src/typescript/helpers/barba.ts" defer></script>
-		<script>
-			/*to prevent Firefox FOUC, this must be here*/
-			let FF_FOUC_FIX;
-		</script>
 	</head>
 
 	<body>
 		<div class="load-container">
 			<div class="loading-screen"></div>
 		</div>
+
 		<header>
 			<nav class="nav" id="nav" data-cursor="-color-whitesmoke">
 				<div class="nav__logo">
@@ -38,11 +34,7 @@
 					</a>
 					<a href="/src/pages/contact.html">
 						<div class="nav__menu__button fill-animation nav-small">
-							<object
-								class="icon"
-								data="/src/assets/icons/email.svg"
-								type="image/svg+xml"
-							></object>
+							<img class="icon" src="/src/assets/icons/email.svg" />
 						</div>
 					</a>
 				</div>
@@ -52,18 +44,20 @@
 		<div data-barba="wrapper">
 			<div data-scroll-container id="scroll-container">
 				<div data-barba="container" data-barba-namespace="bookly">
-					<main>
+					<main data-cursor="-color-steelblue">
 						<section class="project-hero">
 							<div class="project-hero__wrapper">
 								<div class="project-hero__wrapper__grolly"></div>
 								<a
 									href="https://lorenz-perszyk.github.io/grolly/"
 									target="_blank"
-									><img
+								>
+									<img
 										class="project-hero__wrapper__arrow"
 										src="/src/assets/icons/explore_arrow.svg"
 										alt="arrow"
-								/></a>
+									/>
+								</a>
 							</div>
 							<div class="project-grid">
 								<div class="description">

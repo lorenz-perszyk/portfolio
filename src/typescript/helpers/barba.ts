@@ -11,38 +11,22 @@ import {
 	pageTransition,
 } from "./gsap";
 
-barba.hooks.once((data) => {
-	console.log("global once");
-});
-
-// lock the scroll to prevent further animations when transitioning
 barba.hooks.before(() => {
-	console.log("global before");
+	// Remove the Refresh function
+	window.removeEventListener("resize", debounceRefresh);
+	// Lock the scroll to prevent further animations when transitioning
 	scroll.stop();
 });
 
-barba.hooks.beforeLeave(() => {
-	// Remove curser classes
-	let cursorElement = document.querySelector(".mf-cursor"!)
-	cursorElement.classList.remove("-text", "-pointer")
-	cursor.hide()
-})
-
 barba.hooks.afterLeave(() => {
-	console.log("global afterLeave");
 	let triggers = ScrollTrigger.getAll();
 	triggers.forEach((trigger) => {
 		trigger.kill();
 	});
 });
 
-barba.hooks.beforeEnter(() => {
-	// console.log("global beforeEnter");
-});
-
 // reset scroll position and update the scroll when the next page is fetched
 barba.hooks.enter(({ current }) => {
-	console.log("global enter");
 	[current.container.remove()];
 	if (history.scrollRestoration) {
 		history.scrollRestoration = "manual";
@@ -51,18 +35,15 @@ barba.hooks.enter(({ current }) => {
 		duration: 0,
 	});
 	scroll.update();
-	cursor.show();
 });
 
 // unlock the scroll, in order to let the user be able to scroll again
 barba.hooks.after(() => {
-	console.log("global after");
 	scroll.start();
 });
 
 // Initialize Barba and set transition parameters
 barba.init({
-	debug: true,
 	sync: true,
 	transitions: [
 		{
@@ -83,8 +64,12 @@ barba.init({
 				namespace: ["home"],
 			},
 			once() {
-				// console.log("init intro Animation");
-				// introAnimation();
+				scroll.stop();
+				introAnimation();
+				setTimeout(() => {
+					scroll.start();
+					// scroll.update();
+				}, 4700);
 			},
 		},
 	],
@@ -92,19 +77,19 @@ barba.init({
 		{
 			namespace: "home",
 			afterEnter(data) {
-				console.log("home afterEnter");
 				initHomeAnimations();
 				scroll.update();
-				// window.addEventListener("resize", () => debounce(location.reload(), 1000))
+				window.addEventListener("resize", debounceRefresh);
 			},
 			beforeLeave() {
-				// window.removeEventListener("resize", debounce(location.reload(), 1000))
-			}
+				// Remove MouseFollower cursor classes if going to project page
+				let cursorElement = document.querySelector(".mf-cursor"!);
+				cursorElement.classList.remove("-text", "-pointer");				
+			},
 		},
 		{
 			namespace: "contact",
-			afterEnter({next}) {
-				console.log("init contact animations");
+			afterEnter({ next }) {
 				let script = document.createElement("script");
 				script.src = "https://kit.fontawesome.com/58217ad94d.js";
 				script.crossOrigin = "anonymous";
@@ -114,36 +99,35 @@ barba.init({
 		},
 		{
 			namespace: "bookly",
-			beforeEnter({next}) {
-				console.log("init bookly script");
+			beforeEnter({ next }) {
 				let script = document.createElement("script");
-				script.src = "https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js";
+				script.src =
+					"https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js";
 				next.container.appendChild(script);
 			},
 		},
-        {
-			namespace: "grolly",
-			beforeEnter() {
-				console.log("init grolly stuff");
-			},
-		}
 	],
 });
 
-function delay(n = 2000) {
+function delay(delay = 2000) {
 	return new Promise((done) => {
 		setTimeout(() => {
 			done();
-		}, n);
+		}, delay);
 	});
 }
 
+function debounceRefresh() {
+	debounce(location.reload(), 2000);
+}
+
 // Debounce function
-function debounce(func, time){
-    var time = time || 500; // 500 by default if no param
-    var timer;
-    return function(){
-        if(timer) clearTimeout(timer);
-        timer = setTimeout(func, time);
-    };
+function debounce(func, time = 1000) {
+	let timeout;
+	return (...args) => {
+		clearTimeout(timeout);
+		timeout = setTimeout(() => {
+			func;
+		}, time);
+	};
 }

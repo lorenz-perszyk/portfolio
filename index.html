@@ -13,10 +13,6 @@
 		></script>
 		<script type="module" src="/src/typescript/helpers/gsap.ts" defer></script>
 		<script type="module" src="/src/typescript/helpers/barba.ts" defer></script>
-		<script>
-			/*to prevent Firefox FOUC, this must be here*/
-			let FF_FOUC_FIX;
-		</script>
 	</head>
 
 	<body>
@@ -38,11 +34,7 @@
 					</a>
 					<a href="/src/pages/contact.html">
 						<div class="nav__menu__button fill-animation nav-small">
-							<object
-								class="icon"
-								data="/src/assets/icons/email.svg"
-								type="image/svg+xml"
-							></object>
+							<img class="icon" src="/src/assets/icons/email.svg" />
 						</div>
 					</a>
 				</div>
@@ -55,10 +47,10 @@
 					<main>
 						<section
 							class="hero"
-							data-cursor="-color-whitesmoke"
 							data-scroll
 							data-scroll-sticky
 							data-scroll-target="#scroll-container"
+							data-cursor="-color-whitesmoke"
 						>
 							<div id="load__title">Lorenz Perszyk</div>
 							<h1 class="hero__title">DESIGN<br />DEVELOPE<br />ANIMATE</h1>
@@ -85,7 +77,7 @@
 										I’m a designer with a BA in communication design and 6+
 										years of working experience who enjoys creating engaging
 										user experiences. With my passion for interaction animations
-										I develope modern web solutions that look great on all
+										I develop modern web solutions that look great on all
 										devices. Having worked with a large variety of tools, I’m
 										able to choose the best ones for the job.
 										<br /><br />
@@ -337,7 +329,7 @@
 								muted="muted"
 							></video>
 						</section>
-						<div class="footer__outer" data-cursor="-color-whitesmoke">
+						<div class="footer__outer" data-cursor="-color-steelblue">
 							<div class="footer__inner">
 								<h2 class="footer__inner__title">
 									<a href="src/pages/contact.html">Let's get in touch!</a>

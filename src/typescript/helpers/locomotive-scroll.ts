@@ -10,15 +10,14 @@ export let scroll;
 
 // Initialize LocomotiveScroll
 export function initSmoothScroll() {
-	console.log("locoScroll init first load");
 	scroll = new LocomotiveScroll({
 		el: document.getElementById("scroll-container"),
 		smooth: true,
 		multiplier: 0.7,
 		// for tablet smooth
-		tablet: { smooth: true },
+		tablet: { smooth: true, multiplier: 2 },
 		// for mobile
-		smartphone: { smooth: true },
+		smartphone: { smooth: true, multiplier: 2 },
 	});
 	scroll.on("scroll", ScrollTrigger.update);
 }
@@ -43,10 +42,11 @@ ScrollTrigger.scrollerProxy("[data-scroll-container]", {
 	},
 });
 
-// scroll.on("scroll", ScrollTrigger.update);
-if (scroll) {
-}
 ScrollTrigger.addEventListener("refreshInit", function() {
     console.log('ST refreshInit');
+});
+
+ScrollTrigger.addEventListener("refresh", function() {
+    // console.log('ST refreshDone');
 });
 

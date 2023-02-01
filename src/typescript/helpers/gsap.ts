@@ -69,7 +69,6 @@ export const pageTransition = () => {
 
 // HOMEPAGE SECTION TITLE =======================================
 export const initHomeAnimations = () => {
-	console.log("initHomeAnimations");
 
 	gsap.utils.toArray<HTMLElement>(".section__title-wrapper").forEach((elem) => {
 		ScrollTrigger.create({
@@ -251,7 +250,7 @@ export const initContactAnimation = () => {
 			".contact__wrapper__form"
 		) as HTMLFormElement;
 		const formData = new FormData(form);
-		const url = "https://formsubmit.co/wiyamon989@ukbob.com";
+		const url = "https://formsubmit.co/af2afc9908d8016e50a9739c4e50cab8";
 		fetch(url, {
 			method: "POST",
 			body: formData,

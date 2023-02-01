@@ -66,10 +66,9 @@ header
         padding: 10px 10px
 
 .icon
-    width: 20px
+    width: 22px
     height: auto
     cursor: pointer
-    margin-bottom: -2px
     transition: all 0.25s
     &:hover
         filter: invert(45%) sepia(41%) saturate(604%) hue-rotate(165deg) brightness(97%) contrast(92%)
@@ -148,13 +147,13 @@ main
         font-size: 7rem
         line-height: 7rem
         position: relative
-        top: 25%
+        top: 20%
         font-kerning: none
 
     &__subtext
         width: fit-content
         font-size: 1.5rem
-        line-height: 3rem
+        line-height: 2
         font-weight: 500
         position: relative
         left: 45%
@@ -164,23 +163,27 @@ main
     display: none
 
 // Media
-@media (max-width: 1024px)
+@media (max-width: 1280px)
     .hero
         &__title
+            top: 18%
             font-size: 6rem
             line-height: 6rem
         &__subtext
-            top: 35%
-            left: 30%
+            top: 22%
+            left: 38%
+            line-height: 1.8
 
-@media (max-width: 768px)
+@media (max-width: 810px)
     .hero
         &__title
+            top: 20%
             font-size: 5rem
             line-height: 5rem
             margin: auto
             text-align: center
         &__subtext
+            top: 30%
             margin: auto
             left: 0
             right: 0
@@ -233,7 +236,8 @@ main
         font-family: "Krona One"
 
     &__text
-        font-size: 1rem
+        font-size: 1.1rem
+        line-height: 1.7
 
 .about__imagewrapper
     width: 100%
@@ -299,7 +303,7 @@ main
     flex-direction: column
     justify-content: space-between
     align-items: center
-    outline: 0.5px solid var(--theme-text)
+    border: 0.5px solid var(--theme-text)
     border-radius: 8px
 
     &__icon
@@ -329,6 +333,7 @@ main
         padding: 1rem 2rem
 
         &__icon
+            order: 2
             width: 40px
             height: 40px
             margin-bottom: 0
@@ -424,6 +429,8 @@ main
         width: 50%
         min-width: 450px
         margin: auto
+        &__title
+            text-align: center
 
     .work__project__imagewrapper
         order: 1
@@ -441,8 +448,11 @@ main
         gap: 2.5rem
     .work__project__textwrapper
         width: 100%
+        max-width: 500px
         min-width: 0
         margin: 0
+        &__title
+            text-align: left
 
 @media (max-width: 450px)
     .work__project
@@ -456,6 +466,7 @@ main
     padding: 0
     position: relative
     z-index: 5
+    background-color: var(--theme-background)
 
     &__slider
         width: 25%
@@ -509,6 +520,7 @@ main
     background-color: #2b2b2b
 
     &__title
+        width: fit-content
         color: whitesmoke
         cursor: pointer
         transition: color 0.2s
@@ -537,6 +549,9 @@ main
 @media (max-width: 768px)
     .footer__inner
         padding: 0 1rem
+
+        &__title
+            font-size: 1.5rem
 
     .footer__inner__textwrapper
         width: calc( 100% - 2rem )
@@ -578,3 +593,9 @@ main
         margin: auto
         font-size: 3.8rem
         padding: 150px 0 100px
+
+
+// MouseFollower
+@media screen and (max-width: 810px)
+    .mf-cursor
+        display: none
